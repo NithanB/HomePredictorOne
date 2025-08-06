@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -21,7 +22,7 @@
         android:id="@+id/dispinput1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/mozillaheadline"
+        android:fontFamily="@font/bungeereg"
         android:text="Enter the value in numbers"
         android:textColor="@color/cardview_light_background"
         android:textSize="18dp"
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/cardview_light_background"
         android:ems="10"
-        android:fontFamily="@font/mozillaheadline"
+        android:fontFamily="@font/bungeereg"
         android:inputType="numberDecimal"
         android:text="Rooms"
         android:textColor="@color/cardview_light_background"
@@ -52,7 +53,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/cardview_light_background"
         android:ems="10"
-        android:fontFamily="@font/mozillaheadline"
+        android:fontFamily="@font/bungeereg"
         android:inputType="numberDecimal"
         android:text="Zone"
         android:textColor="@color/cardview_light_background"
@@ -84,7 +85,7 @@
         android:layout_marginTop="48dp"
         android:backgroundTint="@color/cardview_light_background"
         android:ems="10"
-        android:fontFamily="@font/mozillaheadline"
+        android:fontFamily="@font/bungeereg"
         android:inputType="numberDecimal"
         android:text="Area"
         android:textColor="@color/cardview_light_background"
@@ -101,7 +102,7 @@
         android:layout_marginEnd="64dp"
         android:backgroundTint="@color/cardview_light_background"
         android:ems="10"
-        android:fontFamily="@font/mozillaheadline"
+        android:fontFamily="@font/bungeereg"
         android:inputType="numberDecimal"
         android:text="Price"
         android:textColor="@color/cardview_light_background"
@@ -118,12 +119,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
         android:backgroundTint="#668cff"
-        android:fontFamily="@font/mozillaheadline"
+        android:fontFamily="@font/bungeereg"
         android:text="Predict Now"
         android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputnum2" />
+        app:layout_constraintTop_toBottomOf="@+id/inputnum2"
+        app:layout_constraintVertical_bias="0.057" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
