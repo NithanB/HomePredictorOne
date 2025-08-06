@@ -44,7 +44,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputnum1"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintVertical_bias="0.045" />
+
+    <EditText
+        android:id="@+id/inputnum3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/cardview_light_background"
+        android:ems="10"
+        android:fontFamily="@font/mozillaheadline"
+        android:inputType="numberDecimal"
+        android:text="Zone"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputnum2"
+        app:layout_constraintVertical_bias="0.095" />
 
     <TextView
         android:id="@+id/Title"
@@ -87,20 +103,20 @@
         android:ems="10"
         android:fontFamily="@font/mozillaheadline"
         android:inputType="numberDecimal"
-        android:text="Rooms"
+        android:text="Price"
         android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/predict_button"
         app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="@+id/predict_button"
         app:layout_constraintTop_toBottomOf="@+id/predict_button"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.162" />
 
     <Button
         android:id="@+id/predict_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="108dp"
         android:backgroundTint="#668cff"
         android:fontFamily="@font/mozillaheadline"
         android:text="Predict Now"
