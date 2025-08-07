@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import android.widget.SeekBar
 // If you change R.id.outputnum1 to a TextView in your XML:
 // import android.widget.TextView
 import ai.onnxruntime.OrtEnvironment
@@ -34,7 +35,24 @@ class MainActivity : AppCompatActivity() {
         // Ensure these IDs match your activity_main.xml
         val inputArea = findViewById<EditText>(R.id.inputnum1)
         val inputRooms = findViewById<EditText>(R.id.inputnum2)
-        val inputZone = findViewById<EditText>(R.id.inputnum3)
+        val inputZone = findViewById<SeekBar>(R.id.seekbar_zone)
+
+        //val seekBarZone =
+
+        inputZone.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                inputZone.setProgress(progress)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+               // TODO("Not yet implemented")
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                //TODO("Not yet implemented")
+            }
+        })
+
         val pressToPredict = findViewById<Button>(R.id.predict_button)
         val resultText = findViewById<EditText>(R.id.outputnum1) // Or TextView
         // Example if using TextView for result:
@@ -45,7 +63,28 @@ class MainActivity : AppCompatActivity() {
             // 1. Get input data and convert to Float
             val areaData = inputArea.text.toString().toFloatOrNull()
             val roomData = inputRooms.text.toString().toFloatOrNull()
-            val zoneData = inputZone.text.toString().toFloatOrNull()
+
+
+            // Get the progress from the SeekBar (which is an Int)
+            val zoneProgress = inputZone.progress
+            var zoneData: Float? = null
+
+            // Directly use the integer progress.
+            // If you need to ensure it's not some default uninitialized state,
+            // you might compare it to a specific value (e.g., if (zoneProgress > 0) )
+            // For now, let's assume any progress value is valid to be converted.
+
+            // Convert the Int progress to Float for your calculation
+            val originalZoneValue = zoneProgress.toFloat()
+            val multipliedZoneValue = originalZoneValue * 3 // Or whatever your logic is
+            zoneData = multipliedZoneValue
+            // It's good practice to log, but ensure Log is imported: import android.util.Log
+            // Log.d("PREDICT_ZONE", "Original Zone Progress: $zoneProgress, Multiplied Zone for model: $zoneData")
+
+
+
+
+
 
             // 2. Validate inputs
             if (areaData != null && roomData != null && zoneData != null) {
