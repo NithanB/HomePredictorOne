@@ -8,7 +8,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 X,y = data.values[:,0:3], data.values[:,3] 
-# For X values, we take the first three columns (area, rooms, zone), and for y values, we take the fourth column (price)
+# For X values, we take the first two columns, and for y values, we take the third column
 
 print(X)
 print(y)
@@ -29,15 +29,16 @@ print(f"Predict the price of the house with 3 rooms and 2000 square feet and zon
 from skl2onnx import convert_sklearn
 from skl2onnx.common.data_types import FloatTensorType
 
-# initial_type must be a list of tuples: (input_name, type)
-initial_type = [
-    ('input_area_and_rooms_and_zone', FloatTensorType([None, 3]))  # [area, rooms, zone]
-]
-# Convert the model to ONNX format for 3 input variables: area, rooms, zone
+initial_type = {
+    ('input_area_and_rooms_and_zone', FloatTensorType([None, 3]))  # Input type for the model where the first column is area, the second column is number of rooms, and the third column is zone
+}
+# Input type for the model where the first column is area and the second column is number of rooms and the third column is zone
+# Convert the model to ONNX format
 converted_model = convert_sklearn(model, initial_types=initial_type)
 
 with open("house_price_model.onnx", "wb") as f:
     f.write(converted_model.SerializeToString())  # Save the ONNX model to a file
 
-# You can now use this ONNX model for inference with 3 input variables (area, rooms, zone) in your mobile app using ONNX Runtime or similar libraries.
-
+# Integrate this onxx model into your mobile app
+# You can use libraries like ONNX Runtime or TensorFlow Lite to run the model on mobile devices
+# For example, in Android, you can use ONNX Runtime for Android to load and run the model

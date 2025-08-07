@@ -9,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.homepredictorone"
-        minSdk = 35
-        targetSdk = 35
+        minSdk = 26
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -42,9 +42,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-
+    implementation("androidx.media3:media3-session:1.3.1") // For MediaSessionService and MediaController
+    implementation("androidx.media3:media3-exoplayer:1.3.1")
     implementation("com.microsoft.onnxruntime:onnxruntime-android:1.18.0")
-   // implementation("androidx.media3:media3-exoplayer:1.8.0")
+    implementation(libs.androidx.media3.session)
+    // implementation("androidx.media3:media3-exoplayer:1.8.0")
    // implementation("androidx.media3.media3-session:1.8.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
