@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
         android:textColor="@android:color/white"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="-35dp" />
 
     <TextView
         android:id="@+id/dispinput1"
@@ -30,8 +31,11 @@
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/inputnum1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Title" />
+        app:layout_constraintTop_toBottomOf="@+id/Title"
+        app:layout_constraintVertical_bias="0.583" />
+
 
     <EditText
         android:id="@+id/inputnum2"
@@ -45,10 +49,10 @@
         android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputnum1"
-        app:layout_constraintVertical_bias="0.045" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
 
     <TextView
         android:id="@+id/Title"
@@ -63,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
         android:id="@+id/inputnum1"
@@ -78,15 +82,15 @@
         android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.069" />
 
     <EditText
         android:id="@+id/outputnum1"
         android:layout_width="306dp"
         android:layout_height="73dp"
-        android:layout_marginEnd="64dp"
         android:backgroundTint="@color/cardview_light_background"
         android:ems="10"
         android:fontFamily="@font/bungeereg"
@@ -94,42 +98,72 @@
         android:text="Price"
         android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/predict_button"
-        app:layout_constraintHorizontal_bias="0.37"
-        app:layout_constraintStart_toStartOf="@+id/predict_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/predict_button"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/ZoneIndNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungeereg"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="30dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.743"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/predict_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginBottom="124dp"
         android:backgroundTint="#668cff"
         android:fontFamily="@font/bungeereg"
         android:text="Predict Now"
         android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputnum2"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <SeekBar
         android:id="@+id/seekbar_zone"
         android:layout_width="234dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="84dp"
         android:max="3"
         android:min="1"
         android:progressBackgroundTint="@color/white"
-        android:thumb="@drawable/home"
-        app:layout_constraintBottom_toTopOf="@+id/predict_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
 
+        android:thumb="@drawable/home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputnum2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.148" />
+
+    <EditText
+        android:id="@+id/ZoneInd"
+        android:layout_width="276dp"
+        android:layout_height="58dp"
+
+        android:ems="10"
+        android:fontFamily="@font/bungeereg"
+        android:text="Scroll to select zone"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

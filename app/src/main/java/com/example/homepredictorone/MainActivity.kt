@@ -7,17 +7,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
 import android.widget.EditText
+
 import android.widget.Toast
 import android.widget.SeekBar
 // If you change R.id.outputnum1 to a TextView in your XML:
-// import android.widget.TextView
+import android.widget.TextView
 import ai.onnxruntime.OrtEnvironment
 import ai.onnxruntime.OrtSession
 import ai.onnxruntime.OnnxTensor
 import androidx.media3.session.MediaSession
+import org.w3c.dom.Text
 import java.nio.FloatBuffer
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var zoneIndicatorTextView: TextView
 
 
 
@@ -36,12 +40,14 @@ class MainActivity : AppCompatActivity() {
         val inputArea = findViewById<EditText>(R.id.inputnum1)
         val inputRooms = findViewById<EditText>(R.id.inputnum2)
         val inputZone = findViewById<SeekBar>(R.id.seekbar_zone)
-
+        zoneIndicatorTextView = findViewById<TextView>(R.id.ZoneIndNum) // Use the ID from XML
+        zoneIndicatorTextView.text = inputZone.progress.toString()
         //val seekBarZone =
 
         inputZone.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 inputZone.setProgress(progress)
+                zoneIndicatorTextView.text = progress.toString()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
