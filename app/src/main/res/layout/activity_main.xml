@@ -19,7 +19,7 @@
         android:textColor="@android:color/white"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-35dp" />
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/dispinput1"
@@ -102,7 +102,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/predict_button"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.186" />
 
     <TextView
         android:id="@+id/ZoneIndNum"
@@ -116,15 +116,15 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743"
+        app:layout_constraintVertical_bias="0.729"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/predict_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        android:backgroundTint="#668cff"
+        android:layout_marginBottom="148dp"
+        android:backgroundTint="#8FBC8F"
         android:fontFamily="@font/bungeereg"
         android:text="Predict Now"
         android:textColor="@color/cardview_light_background"
@@ -134,8 +134,8 @@
 
     <SeekBar
         android:id="@+id/seekbar_zone"
-        android:layout_width="234dp"
-        android:layout_height="44dp"
+        android:layout_width="290dp"
+        android:layout_height="53dp"
         android:layout_marginTop="84dp"
         android:max="3"
         android:min="1"
