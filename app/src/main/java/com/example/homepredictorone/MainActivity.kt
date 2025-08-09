@@ -7,6 +7,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
 import android.widget.EditText
+import android.media.MediaPlayer
+
 
 import android.widget.Toast
 import android.widget.SeekBar
@@ -22,13 +24,28 @@ import java.nio.FloatBuffer
 class MainActivity : AppCompatActivity() {
 
     private lateinit var zoneIndicatorTextView: TextView
+    private var mediaPlayer: MediaPlayer?  = null
+
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+
+
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main) // Ensure this layout file exists
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.bkgmusicskibidi)
+        mediaPlayer?.isLooping = true
+        mediaPlayer?.start()
+
+
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -126,6 +143,20 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    override fun onPause(){
+        super.onPause()
+        mediaPlayer?.pause()
+    }
+    override fun onResume(){
+        super.onResume()
+        mediaPlayer?.start()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer?.stop()
+        mediaPlayer?.release()
+        mediaPlayer = null
+    }
 
     /**
      * Creates an ONNX Runtime session from the model file in res/raw.
@@ -221,3 +252,5 @@ class MainActivity : AppCompatActivity() {
         return outputValue
     }
 }
+
+
